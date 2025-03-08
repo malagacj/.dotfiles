@@ -28,3 +28,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 
 call plug#end()
+
+
+" Enable specific linters for Python (e.g., flake8, pylint, mypy)
+let g:ale_linters = {
+\   'python': ['flake8', 'pylint', 'mypy'],
+\}
+
+" Enable automatic fixing on save
+let g:ale_fix_on_save = 1
+
+" Configure the fixers to use for Python (e.g., black, autopep8)
+let g:ale_fixers = {
+\   'python': ['black', 'autopep8'],
+\}
+
+let g:ale_python_black_options = '--line-length 79'
